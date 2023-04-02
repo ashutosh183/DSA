@@ -112,7 +112,7 @@ public class Main {
         list.addFirst(1);
         list.size();
         list.displayList(list.head);
-//        list.deleteFirst();
+        list.deleteFirst();
         list.displayList(list.head);
         //sending index > size
         System.out.println(list.getValue(5));
@@ -123,7 +123,7 @@ public class Main {
 
         list.addAtIndex(0, 17);
         list.addAtIndex(2, 19);
-        list.addAtIndex(11, 110);
+        list.addAtIndex(10, 110);
         System.out.println(list.size());
         list.displayList(list.head);
     }
