@@ -36,6 +36,10 @@ public class Main {
         }
 
         void displayList(Node head){
+            if(size == 0){
+                System.out.println("List is empty");
+                return;
+            }
             Node tmp = head;
             while(tmp != null){
                 if (tmp.next != null) {
@@ -62,6 +66,26 @@ public class Main {
                 head = head.next;
                 size--;
             }
+        }
+
+        void removeLast(){
+            if(size == 0){
+                System.out.println("No elements to remove");
+                return;
+            }
+
+            if(size == 1){
+                head = tail = null;
+                size--;
+                return;
+            }
+
+            Node tmp = head;
+            while(tmp.next.next != null){
+                tmp = tmp.next;
+            }
+            tmp.next = null;
+            size--;
         }
 
         void addAtIndex(int idx, int data){
@@ -101,7 +125,11 @@ public class Main {
     }
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
+        list.removeLast();
         list.addFirst(100);
+        list.displayList(list.head);
+        list.removeLast();
+        list.displayList(list.head);
         list.addLast(10);
         list.addLast(20);
         list.addLast(30);
@@ -126,5 +154,9 @@ public class Main {
         list.addAtIndex(10, 110);
         System.out.println(list.size());
         list.displayList(list.head);
+
+        list.removeLast();
+        list.displayList(list.head);
+
     }
 }
